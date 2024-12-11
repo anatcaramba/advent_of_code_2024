@@ -92,7 +92,8 @@ int main(void)
         rowd = rowdin;
         cold = coldin;
         int nbet = 0;
-        while (nbet < wid * hei / 2 && 0 <= rowd + dr && rowd + dr < hei && 0 <= cold + dc && cold + dc < wid) {
+        int lim = wid * hei * 4;
+        while (nbet < lim && 0 <= rowd + dr && rowd + dr < hei && 0 <= cold + dc && cold + dc < wid) {
             if (grid[(rowd + dr) * wid + cold + dc] == '#') {
                 int ndr = dr == 0 ? dc : 0;
                 dc = dc == 0 ? -dr : 0;
@@ -105,7 +106,7 @@ int main(void)
             cold += dc;
             nbet += 1;
         }
-        if (nbet == wid * hei / 2) {
+        if (nbet == lim) {
             ret2 += 1;
         }
         grid[i] = '.';

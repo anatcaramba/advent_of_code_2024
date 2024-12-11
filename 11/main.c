@@ -83,7 +83,7 @@ long longueur(long val, int et, int netapesmax, cleval** hashtable)
     if (et == netapesmax) {
         return 1;
     }
-    cleval* entree = trouver(hashtable, et, val);
+    cleval* entree = trouver(hashtable, netapesmax - et, val);
     if (entree != 0) {
         return entree->lg;
     }
@@ -99,7 +99,7 @@ long longueur(long val, int et, int netapesmax, cleval** hashtable)
             lg = longueur(val / dixp, et + 1, netapesmax, hashtable) + longueur(val % dixp, et + 1, netapesmax, hashtable);
         }
     }
-    inserer(hashtable, et, val, lg);
+    inserer(hashtable, netapesmax - et, val, lg);
     return lg;
 }
 
@@ -144,16 +144,12 @@ int main(void)
         ret1 += longueur(pierres[i], 0, NETAPES1, hashtable);
     }
     printf("%ld\n", ret1);
-    for (int i = 0; i < MODULO; i += 1) {
-        liberer(hashtable[i]);
-        hashtable[i] = 0;
-    }
 
     // ETOILE 2
-    for (int i = 0; i < MODULO; i += 1) {
-        liberer(hashtable[i]);
-        hashtable[i] = 0;
-    }
+    // for (int i = 0; i < MODULO; i += 1) {
+    //     liberer(hashtable[i]);
+    //     hashtable[i] = 0;
+    // }
     for (int i = 0; i < len; i += 1) {
         ret2 += longueur(pierres[i], 0, NETAPES2, hashtable);
     }

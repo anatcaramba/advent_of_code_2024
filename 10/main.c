@@ -28,7 +28,6 @@ int main(void)
         fprintf(stderr, "Erreur : fichier non lu\n");
         return 2;
     }
-    int len = nbread - 1;
     int* grid = malloc(nbread * sizeof(int));
     int wid = -1;
     int i = 0;

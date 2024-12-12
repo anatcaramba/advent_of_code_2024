@@ -51,3 +51,9 @@ Confusion initiale : j'ai implémenté la partie 2 en 1, la 1 étant en fait plu
 J'ai commencé par réaliser la partie 1 avec des listes doublement chaînées. Pour 25 étapes, c'est tout à fait gérable en temps mais cela devient affreux en temps ET en mémoire pour un nombre d'étapes dépassant 35. Donc pas possible de faire la partie 2 ainsi...
 
 Heureusement, l'ordre des pierres ne compte absolument pas, malgré un petit signal contradictoire. Donc finalement, une version récursive avec mémoïsation dans une table de hachage customisée fait l'affaire (pour les deux parties).
+
+### Jour 12
+
+La première partie utilise un parcours en profondeur pour calculer les aires des zones (composantes connexes). De plus, à chaque sommet voisin (en comptant l'extérieur de la grille), si ce voisin est dans une autre zone, on ajoute 1 au périmètre.
+
+La deuxième partie ne présente pas de grande difficulté algorithmique supplémentaire, mais est assez fastidieuse. J'ai calculé, pour trouver le nombre de côtés des zones, le nombre de coins. Les coins "aigüs" (convexes) sont facilement détectables. Les coins que j'appelle "obtus" (on pourrait dire plutôt dire concaves) sont plus difficiles à détecter à partir du parcours, je les ai donc détectés depuis le parcours de la zone "complémentaire" à ce coin, puis j'ai rattaché les coins concaves à leur zone via un précalcul des représentants de chaque composante... En bref, beaucoup de tests dans les 4 directions, beaucoup de structures additionnelles, il y aurait finalement de la place pour quelques simplifications.

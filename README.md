@@ -57,3 +57,15 @@ Heureusement, l'ordre des pierres ne compte absolument pas, malgré un petit sig
 La première partie utilise un parcours en profondeur pour calculer les aires des zones (composantes connexes). De plus, à chaque sommet voisin (en comptant l'extérieur de la grille), si ce voisin est dans une autre zone, on ajoute 1 au périmètre.
 
 La deuxième partie ne présente pas de grande difficulté algorithmique supplémentaire, mais est assez fastidieuse. J'ai calculé, pour trouver le nombre de côtés des zones, le nombre de coins. Les coins "aigüs" (convexes) sont facilement détectables. Les coins que j'appelle "obtus" (on pourrait dire plutôt dire concaves) sont plus difficiles à détecter à partir du parcours, je les ai donc détectés depuis le parcours de la zone "complémentaire" à ce coin, puis j'ai rattaché les coins concaves à leur zone via un précalcul des représentants de chaque composante... En bref, beaucoup de tests dans les 4 directions, beaucoup de structures additionnelles, il y aurait finalement de la place pour quelques simplifications.
+
+### Jour 13
+
+Beaucoup trop de temps à essayer de programmer une solution récursive à la partie 1.
+
+Beaucoup trop de temps à faire fonctionner Dijkstra pour la partie 1.
+
+Beaucoup, beaucoup trop de temps à essayer d'adapter ce Dijkstra à la partie 2... Je me suis fait avoir par deux choses. D'abord, l'énoncé qui parle de trouver un plus court chemin. Ensuite, le fait qu'après avoir fait mon Dijkstra, je me suis rendu compte qu'un raccourci était possible ; on tombe en effet rapidement sur un vecteur colinéaire à la cible. Il suffit alors de multiplier ce vecteur pour trouver la solution attendue. Or, les entrées sont programmées de sorte qu'on ne trouve *pas* un tel vecteur colinéaire une fois la cible agrandie, en tout cas, pas dans les limites de ma mémoire.
+
+J'ai finalement compris qu'il fallait résoudre le système, ce qui rend le problème du jour quasiment risible. La leçon est de ne pas toujours penser en informaticien, et de réactiver ses maths du collège...
+
+En plus, mon tout premier réflexe a été de penser au théorème chinois... Puis de me dire que non, décidément, la solution ne serait pas des maths...

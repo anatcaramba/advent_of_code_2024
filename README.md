@@ -69,3 +69,11 @@ Beaucoup, beaucoup trop de temps à essayer d'adapter ce Dijkstra à la partie 2
 J'ai finalement compris qu'il fallait résoudre le système, ce qui rend le problème du jour quasiment risible. La leçon est de ne pas toujours penser en informaticien, et de réactiver ses maths du collège...
 
 En plus, mon tout premier réflexe a été de penser au théorème chinois... Puis de me dire que non, décidément, la solution ne serait pas des maths...
+
+### Jour 14
+
+Jour plutôt cool et facile. La première partie ne demande que de calculer des modulos, je me suis quand même fait avoir par 1) l'inversion des axes ; 2) Le fait que `%` en C ne soit pas positif pour un dividende négatif.
+
+Partie 2, je me suis rapidement rendu compte qu'il existait un pattern vertical apparaissant tous les 101 étapes (soit la largeur) depuis 11. Comme je ne trouvais pas la solution attendue de cette manière, je suis reparti de 0, et j'ai vu un pattern horizontal, cette fois, dans $89 + 103N$ (103 étant la hauteur). Il faudrait ensuite, pour être malin, utiliser le théorème chinois (101 et 103 étant premiers (donc entre eux)) mais je ne m'en souvenais pas et je n'avais pas de papier, donc j'ai résolu numériquement.
+
+Pour cette raison je ne suis pas certain que ma solution se généralise, elle dépend de fait des valeurs initiales des patterns (pour moi 89 et 11). À la limite, il serait possible de détecter ces valeurs initiales en comptant le nombre de robots se situant dans la zone concernée.

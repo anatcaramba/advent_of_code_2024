@@ -77,3 +77,9 @@ Jour plutôt cool et facile. La première partie ne demande que de calculer des 
 Partie 2, je me suis rapidement rendu compte qu'il existait un pattern vertical apparaissant tous les 101 étapes (soit la largeur) depuis 11. Comme je ne trouvais pas la solution attendue de cette manière, je suis reparti de 0, et j'ai vu un pattern horizontal, cette fois, dans $89 + 103N$ (103 étant la hauteur). Il faudrait ensuite, pour être malin, utiliser le théorème chinois (101 et 103 étant premiers (donc entre eux)) mais je ne m'en souvenais pas et je n'avais pas de papier, donc j'ai résolu numériquement.
 
 Pour cette raison je ne suis pas certain que ma solution se généralise, elle dépend de fait des valeurs initiales des patterns (pour moi 89 et 11). À la limite, il serait possible de détecter ces valeurs initiales en comptant le nombre de robots se situant dans la zone concernée.
+
+### Jour 15
+
+Encore un jour très agréable. La première partie se résout facilement en appliquant les règles. À chaque étape, on va regarder le plus loin possible tant qu'il y a des `O`. Si le caractère suivant est un `#`, on ne fait rien, sinon on décale tout. La présence d'un enclos de murs autour de la zone est un vrai soulagement, pas de tests aux limites (sinon, j'aurais pu de toute façon les rajouter, mais je ne le fais pas systématiquement).
+
+La deuxième partie n'est pas si horrible qu'elle m'en a eu l'air au début. J'ai généralisé, en quelque sorte, l'approche précédente en réalisant un parcours en profondeur dans la direction du mouvement. Il suffit que l'une des caisses atteintes soit bloquée pour que tout le mouvement soit annulé. Je marque les cases à décaler, puis une dernière fonction réalise ces modifications. Je réalise cette dernière étape assez paresseusement en parcourant toute la grille dans le bon sens, il serait possible de faire mieux en faisant en fait un parcours en largeur. Ainsi il suffirait de décaler les cases visitées dans l'ordre postfixe du BFS.

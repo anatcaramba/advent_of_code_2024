@@ -87,3 +87,7 @@ La deuxième partie n'est pas si horrible qu'elle m'en a eu l'air au début. J'a
 ### Jour 16
 
 Neurones complètement grillés aujourd'hui. Partie 1 : Dijkstra presque standard. Partie 2 : j'ai modifié mon Dijkstra afin de construire un DAG mémorisant tous les chemins possibles. À chaque fois qu'on pourrait diminuer la distance d'un sommet ouvert mais pas encore fermé, si la distance est égale à celle déjà calculée, alors j'ajoute un ancêtre supplémentaire. Ensuite, j'ai fait un parcours du DAG à l'envers, depuis le sommet de fin, en comptant les sommets visités (sans distinguer cette fois l'orientation). Le bug qui m'a grillé les neurones est que je ne distinguais pas sommets ouverts et sommets sortis de la file de priorité, ce qui me conduisait à remodifier la distance de sommets défilés. Ce problème se produit-il dans un Dijkstra classique ? J'y penserai demain quand j'aurai récupéré mon cerveau.
+
+### Jour 17
+
+Mes neurones fonctionnent à nouveau. La partie 1 est triviale ; la partie 2 l'est beaucoup moins. Il ne suffit pas de tenter toutes les valeurs possibles en brute force ; j'ai essayé de faire du retro-engineering sur mon programme, mais je n'arrivais pas à grand chose. En fait, il me suffisait de remarquer la structure, puis de tenter un pseudo brute-force pour matcher à chaque étape le suffixe. Ce qui m'a pris du temps, c'est qu'il ne suffit pas de regarder les 8 valeurs possibles de `a % 8`, car la sortie peut dépendre de plus de bits de `a` que des trois derniers. Je pense que tout seul, il m'aurait fallu du temps pour arriver au résultat.

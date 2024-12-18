@@ -93,3 +93,7 @@ Neurones complètement grillés aujourd'hui. Partie 1 : Dijkstra presque standar
 Mes neurones fonctionnent à nouveau. La partie 1 est triviale ; la partie 2 l'est beaucoup moins. Il ne suffit pas de tenter toutes les valeurs possibles en brute force ; j'ai essayé de faire du retro-engineering sur mon programme, mais je n'arrivais pas à grand chose. En fait, il me suffisait de remarquer la structure, puis de tenter un pseudo brute-force pour matcher à chaque étape le suffixe. Ce qui m'a pris du temps, c'est qu'il ne suffit pas de regarder les 8 valeurs possibles de `a % 8`, car la sortie peut dépendre de plus de bits de `a` que des trois derniers. Je pense que tout seul, il m'aurait fallu du temps pour arriver au résultat.
 
 Ajout : en fait si, ça ne dépend que de 8 valeurs de `a % 8`, mais on n'est pas garanti de trouver alors le résultat de manière gloutonne. C'est pour ça que je "rattrape" des choix faits précédemment. Merci au collègue qui me l'a expliqué.
+
+### Jour 18
+
+Encore du plus court chemin ? Très simple aujourd'hui, j'aurais même pu faire un simple BFS (mais j'ai fait un Dijkstra par habitude). Partie 2, recherche dichotomique du seuil (puis relire la consigne pour imprimer la bonne valeur). RAS, vraiment.

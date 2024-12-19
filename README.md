@@ -97,3 +97,9 @@ Ajout : en fait si, ça ne dépend que de 8 valeurs de `a % 8`, mais on n'est pa
 ### Jour 18
 
 Encore du plus court chemin ? Très simple aujourd'hui, j'aurais même pu faire un simple BFS (mais j'ai fait un Dijkstra par habitude). Partie 2, recherche dichotomique du seuil (puis relire la consigne pour imprimer la bonne valeur). RAS, vraiment.
+
+### Jour 19
+
+Journée algorithmique du texte : je me suis dit que je pourrais adapter l'implémentation de Glushkov faite avec mes élèves en OCaml. Il me restait, à partir d'un automate, à écrire la fonction décidant si un mot est accepté par cet automate, en plus des fonctions de lecture de fichier. Seulement, l'automate ainsi créé (non déterministe) possède plus de 2000 états ; au-delà de la 14e lettre du premier mot, comme il faut maintenir tous les états dans lesquels on peut se trouver, la taille de cet ensemble a tellement explosé qu'on n'avance plus. Bon, je n'avais pas du tout optimisé cette implémentation, mais il faut bien se rendre compte que c'est impossible ainsi. J'ai alors entrepris, en OCaml, de simplement tenter d'appliquer tous les patterns possibles, de maintenir l'ensemble des positions dans lesquelles on peut se trouver, et de renvoyer vrai ssi. on peut atteindre la position `n` (la longueur du mot). Cela m'a demandé, un peu lourdement, d'éliminer les doublons à chaque étape.
+
+Puis finalement, partie 2, j'ai compris qu'il existait une "simple" relation de récurrence qui m'aurait simplifié également ma partie 1 ; mais qu'importe, je garde tout tel quel. Ma partie 1 prend quelque 4s avec `ocamlc`, et 500ms avec `ocamlopt`.

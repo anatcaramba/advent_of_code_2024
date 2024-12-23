@@ -117,3 +117,7 @@ Il apparaîtrait, d'après un collègue, que le meilleur chemin entre deux touch
 ### Jour 22
 
 Jour simple. Rien à dire sur la partie 1. Partie 2, il vaut mieux mémoriser les scores des séquences rencontrées que de toutes les tenter ; on y gagne un énorme facteur, mais je pensais que ça irait, donc naïvement j'avais commencé par cette seconde approche.
+
+### Jour 23
+
+Recherche de cliques. Pour la partie 1 (lister certaines 3-cliques) je suis assez content d'avoir codé quelque chose de correct du premier coup et assez rapidement, en tenant compte des doublons/triplets. Partie 2, j'ai utilisé l'algorithme de Bron-Kerbosch (que je ne connaissais pas). Comme la clique maximum est de taille 13, tout va bien. Au début, j'avais eu un peu peur, car il y a quand même plus de 3000 sommets.
